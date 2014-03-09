@@ -86,7 +86,7 @@ var col = function(v) {
 };
 
 var numToRad = function(n) {
-  return Math.sqrt(n)/45;
+  return Math.sqrt(n);
 };
 
 var nodes = [],
@@ -97,8 +97,8 @@ us_lowres.forEach(function(s) {
   if (us_stats[s.code]) {
     var x = scale(s.center).x,
         y = scale(s.center).y,
-        numObese = us_stats[s.code].pop[us_stats.yearIdx(year)]*us_stats[s.code].obese[us_stats.yearIdx(year)]/100,
-        n = {x: x, y: y, p: {x: x, y: y}, r: numToRad(numObese), code:s.code};
+        redditUsers = us_stats[s.code].reddit,
+        n = {x: x, y: y, p: {x: x, y: y}, r: numToRad(redditUsers), code:s.code};
     nodes.push(n);
     codeToNode[s.code] = n;
   }
@@ -139,9 +139,9 @@ vis.add(pv.Dot)
     .left(function(d) d.x)
     .top(function(d) d.y)
     .radius(function(d) d.r)
-    .fillStyle(function(d) col(us_stats[d.code].obese[us_stats.yearIdx(year)]))
+    .fillStyle(function(d) col(us_stats[d.code].reddit * 100 / us_stats[d.code].pop))
     .strokeStyle(null)
-    .title(function(d) us_stats[d.code].name + ": " + us_stats[d.code].obese[us_stats.yearIdx(year)] + "%")
+    .title(function(d) us_stats[d.code].name + ": " + Math.round(100*us_stats[d.code].reddit * 100 / us_stats[d.code].pop)/100 + "%")
    .add(pv.Label)
     .text(function(d) d.code)
     .textStyle("#fee")
@@ -151,10 +151,9 @@ vis.add(pv.Dot)
 
 vis.add(pv.Dot)
     .data([
-        {v: 10000000, l: "10M"},
-        {v: 1000000, l: "1M"},
-        {v: 5000000, l: "5M"},
-        {v: 100000, l: "100K"}
+        {v: 5000, l: "5K"},
+        {v: 500, l: "500"},
+        {v: 50, l: "50"}
       ])
     .fillStyle(null)
     .strokeStyle("#555")
