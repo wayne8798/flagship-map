@@ -2,23 +2,25 @@
 <meta charset="utf-8">
 <body>
 <script src="d3.js"></script>
-<script src="d3.layout.cloud.js"></script>>
+<script src="d3.layout.cloud.js"></script>
+<div style="text-align: center">
 <script>
   var fill = d3.scale.category20();
 
-  var weight = {"Weight" :[{"Hello":.9}, {"world":.8}, {"normally":.7}, {"you":.6}, {"want":.5}, {"more":.4}, {"words":.3},
-      {"than":.2}, {"this":.1}]};
+  var wordList = ["Hello", "world", "normally", "you", "want", "more", "words",
+        "than", "this"];
+
+  var weight = {"Hello":.9, "world":.8, "normally":.7, "you":.6, "want":.5, "more":.4, "words":.3,
+      "than":.2, "this":.1};
 
   	function getSize(d)
   	{
   		console.log(d);
-  		return 10 + 10 * 90;
+  		return 10 + weight[d] * 90;
   	}
 
   d3.layout.cloud().size([600, 600])
-      .words([
-        "Hello", "world", "normally", "you", "want", "more", "words",
-        "than", "this"].map(function(d) {
+      .words(wordList.map(function(d) {
         return {text: d, size: getSize(d)};
       }))
       .padding(5)
@@ -47,3 +49,4 @@
         .text(function(d) { return d.text; });
   }
 </script>
+</div>
