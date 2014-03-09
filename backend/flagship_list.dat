@@ -1,50 +1,51 @@
+State Code | url | subscribers | enrollment
 AL capstone 1203 34852
-AK uaa 175 17129
-AZ UofArizona 1565 40223
-AR uark 125 25365
+AK uaf 103 10799
+AZ UofArizona 1565
+AR uark 125 40223
 CA berkeley 6676 35899
 CO cuboulder 1274 32697
 CT uconn 2001 30474
 DE udel 746 21856
-FL ufl 2096 49913
-#GA
-#HI
-#ID
+FL ufl 2096 51725
+GA UGA 3110 34475
+HI universityofhawaii 479 13952
+ID uofi 278 11180
 IL UIUC 7971 44520
-#IN
-#IA
-#KS
-#KY
-#LA
-#ME
-#MD
-#MA
-#MI
-#MN
-#MS
-#MO
-#MT
-#NE
-#NV
-#NH
-#NJ
-#NM
-#NY
-#NC
-#ND
-#OH
-#OK
-#OR
-#PA
-#RI
-#SC
-#SD
-#TN
-#TX
-#UT
-#VT
+IN IndianaUniversity 2395 42731 
+IA uiowa 1023 31065
+KS UniversityofKansas 1323 27784
+KY UniversityofKentucky 460 28928
+LA LSU 2386 30000
+ME umaine 123 10901
+MD umd 3348 37631
+MA UMass 1613 27269
+MI UofM 4254 43426
+MN uofmn 2586 30375
+MS olemiss 690 17142
+MO mizzou 1682 34658
+MT UMT 27 14946
+NE UNLincoln 372 24593
+NV unr 563 18227
+NH unh 352 14,942
+NJ rutgers 3817 58788
+NM unm 494  27197
+NY UBreddit 1278 29940
+NC tarheels 1565 29127
+ND UND 292 15250
+OH OSU 4661 57466
+OK sooners 1825 30813
+OR ducks 1764 24548
+PA UPenn 986 21344
+RI univRI 66 16387
+SC gamecocks 1422 31288
+SD dsu 47 3058
+TN UTK 1385 27171
+TX UTAustin 5747 52213
+UT uofu 1059 32077
+VT universityofvermont 565 12723
 VA UVA 2283 21095
-#WA
-#WV
-#WI
-#WY
+WA udub 2769 43013
+WV WVU 1136 29466
+WI UWMadison 2980 42820
+WY uwyo 287 12928
