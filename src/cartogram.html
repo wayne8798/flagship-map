@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Dorling Cartogram</title>
+    <title>Flagship Map</title>
     <link type="text/css" rel="stylesheet" href="ex.css?3.2"/>
     <link type="text/css" rel="stylesheet" href="ui-lightness/jquery-ui-1.8rc3.custom.css"/>
     <script type="text/javascript" src="protovis.min.js"></script>
@@ -66,10 +66,6 @@ var scale = pv.Geo.scale()
 var legendMargin = 20,
     ease = null,
     yearsMargin = 100;
-
-var yearsScale = pv.Scale.linear()
-    .domain(us_stats.minYear, us_stats.maxYear)
-    .range(yearsMargin + 2, w - yearsMargin);
 
 var legendScale = pv.Scale.linear()
     .domain(14, 35)
