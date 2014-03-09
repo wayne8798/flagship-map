@@ -45,13 +45,13 @@ var legendScale = pv.Scale.linear()
     .range(legendMargin, w - legendMargin);
 
 var col = function(v) {
-  if (v < 1) return "#D2D8FF";
-  if (v < 4) return "#B2B8FF";
-  if (v < 7) return "#8288EE";
-  if (v < 10) return "#6268BB";
-  if (v < 13) return "#424888";
-  if (v < 16) return "#121866";
-  /* else */ return "#000044";
+  if (v < 1) return "#6268FF";
+  if (v < 4) return "#5258DD";
+  if (v < 7) return "#4248BB";
+  if (v < 10) return "#323899";
+  if (v < 13) return "#222877";
+  if (v < 16) return "#121855";
+  /* else */ return "#020844";
 };
 
 var numToRad = function(n) {
