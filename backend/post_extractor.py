@@ -20,7 +20,7 @@ r = praw.Reddit(user_agent="flagship-map by wayne8798")
 f = open('flagship_list.dat')
 for line in f.readlines():
     if line[0] != '#':
-        school_name = line.split()[0]
+        school_name = line.split()[1]
         retrieve_posts(school_name)
         print 'Finish fetching ' + school_name
 f.close()
