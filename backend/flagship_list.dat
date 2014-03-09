@@ -1,16 +1,16 @@
-capstone 1203
-uaa 175
-UofArizona 1565
-uark 125
-berkeley 6676
-cuboulder 1274
-uconn 2001
-udel 746
-ufl 2096
+AL capstone 1203 34852
+AK uaa 175 17129
+AZ UofArizona 1565 40223
+AR uark 125 25365
+CA berkeley 6676 35899
+CO cuboulder 1274 32697
+CT uconn 2001 30474
+DE udel 746 21856
+FL ufl 2096 49913
 #GA
 #HI
 #ID
-UIUC 7971
+IL UIUC 7971 44520
 #IN
 #IA
 #KS
@@ -43,7 +43,7 @@ UIUC 7971
 #TX
 #UT
 #VT
-UVA 2283
+VA UVA 2283 21095
 #WA
 #WV
 #WI
