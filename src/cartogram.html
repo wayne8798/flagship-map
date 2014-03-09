@@ -31,7 +31,7 @@ us_lowres.forEach(function(c) {
 var i = 0,
     w = 1000,
     h = 600,
-    mapMargin = 30;
+    mapMargin = 10;
 
 var scale = pv.Geo.scale()
     .domain({lng: -128, lat: 24}, {lng: -64, lat: 50})
@@ -57,6 +57,10 @@ var col = function(v) {
 var numToRad = function(n) {
   return Math.max(Math.sqrt(n), 10);
 };
+
+var gotToVis = function(n) {
+    location.href = "wordcloud.html?subreddit="+n;
+}
 
 var nodes = [],
     codeToNode = [],
@@ -86,6 +90,7 @@ us_lowres.forEach(function(s) {
   }
 });
 
+
 var collisionConstraint = pv.Constraint.collision(function(d) d.r + 1),
     positionConstraint = pv.Constraint.position(function(d) d.p),
     linkConstraint = pv.Force.spring(100).links(links);
@@ -110,6 +115,8 @@ vis.add(pv.Dot)
     .radius(function(d) d.r)
     .fillStyle(function(d) col(us_stats[d.code].reddit * 100 / us_stats[d.code].pop))
     .strokeStyle(null)
+    .cursor("pointer")
+    .event("click", function(d) location.href = "wordcloud.html?subreddit="+us_stats[d.code].reddit)
     .title(function(d) us_stats[d.code].name + ": " + Math.round(100*us_stats[d.code].reddit * 100 / us_stats[d.code].pop)/100 + "%")
    .add(pv.Label)
     .text(function(d) d.code)
@@ -117,6 +124,7 @@ vis.add(pv.Dot)
     .font(function(d) "bold " + (4*Math.log(d.r)).toFixed(0) + "px sans-serif")
     .textAlign("center")
     .textBaseline("middle");
+   
 
 vis.add(pv.Dot)
     .data([
