@@ -51,7 +51,3 @@ var us_stats = {
 'WI': {name:'Wisconsin', reddit:2980 , pop:42820},
 'WY': {name:'Wyoming', reddit:287 , pop:12928},
 };
-
-us_stats.maxYear = 2008;
-us_stats.minYear = 1995;
-us_stats.yearIdx = function(year) { return 2008-year; }
