@@ -29,8 +29,8 @@ us_lowres.forEach(function(c) {
 });
 
 var i = 0,
-    w = 810,
-    h = 400,
+    w = 1000,
+    h = 600,
     mapMargin = 30;
 
 var scale = pv.Geo.scale()
@@ -55,7 +55,7 @@ var col = function(v) {
 };
 
 var numToRad = function(n) {
-  return Math.max(Math.sqrt(n)/2, 4);
+  return Math.max(Math.sqrt(n), 10);
 };
 
 var nodes = [],
