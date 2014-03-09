@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <body>
+<center>hi</center>
 <script src="d3.js"></script>
 <script src="d3.layout.cloud.js"></script>
-<div style="text-align: center">
 <script>
   var fill = d3.scale.category20();
 
@@ -32,10 +32,10 @@
 
   function draw(words) {
     d3.select("body").append("svg")
-        .attr("width", 600)
-        .attr("height", 600)
+        .attr("width", screen.availWidth)
+        .attr("height", screen.availHeight)
       .append("g")
-        .attr("transform", "translate(300,300)")
+        .attr("transform", "translate("+ screen.availWidth/2 +","+ screen.availHeight/3 +")")
       .selectAll("text")
         .data(words)
       .enter().append("text")
@@ -49,4 +49,3 @@
         .text(function(d) { return d.text; });
   }
 </script>
-</div>
