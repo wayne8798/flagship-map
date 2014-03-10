@@ -1,4 +1,5 @@
 import math
+import json
 from os import listdir
 from text.blob import TextBlob as tb
 
@@ -26,9 +27,19 @@ def load_docs():
     return [bloblist, pairlist]
 
 bloblist, pairlist = load_docs()
+frontend_data = {}
 for pair in pairlist:
-    print 'Top words in document ' + pair[0]
-    scores = {word: tfidf(word, pair[1], bloblist) for word in pair[1].words}
+    school_name = pair[0]
+    blob = pair[1]
+    frontend_data[school_name] = {}
+    print 'Top words in document ' + school_name
+    scores = {word: tfidf(word, blob, bloblist) for word in blob.words}
     sorted_words = sorted(scores.items(), key=lambda x: x[1], reverse=True)
-    for word, score in sorted_words[:10]:
-        print('\tWord: {}, TF-IDF: {}'.format(word, round(score, 5)))
+    for word, score in sorted_words[:30]:
+        rounded_score = round(score, 8)
+        frontend_data[school_name][word] = rounded_score
+        print('\tWord: {}, TF-IDF: {}'.format(word, rounded_score))
+
+fout = open('frontend_data.json', 'w')
+fout.write(json.dumps(frontend_data))
+fout.close()
